@@ -78,174 +78,411 @@
             to { transform: translateX(0); opacity: 1; }
         }
         .gif-button {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-}
-
-.button-image {
-    width: 100px;
-    height: 100px;
-    transition: all 0.3s ease-in-out;
-}
-
-.gif-button:hover .button-image,
-.gif-button:focus .button-image,
-.gif-button:active .button-image {
-    content: url('./img/YQDj.gif');
-}
-
-
-
-            
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.melting-button {
-    position: relative;
-    padding: 15px 30px;
-    background-color: #faebeb;
-    color: white;
-    border: none;
-    font-size: 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.melting-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
-}
-
-.button-text {
-    position: relative;
-    z-index: 10;
-}
-
-.acid-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #00ff00;
-    clip-path: circle(0% at 50% 50%);
-    transition: clip-path 0.5s ease;
-    z-index: 0;
-}
-
-.melting-button:hover .acid-layer {
-    clip-path: circle(100% at 50% 50%);
-}
-
-.particle-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-}
-
-
-.particle {
-    position: absolute;
-    background-color: rgba(0, 255, 0, 0.8);
-    border-radius: 50%;
-    animation: particleAnim ease infinite;
-}
-
-@keyframes particleAnim {
-    0% {
-        transform: scale(0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1.5);
-        opacity: 0;
-    }
-}
-
-@keyframes heartbeat {
-          0% {
-            transform: scale(1);
-          }
-          14% {
-            transform: scale(1.3);
-          }
-          28% {
-            transform: scale(1);
-          }
-          42% {
-            transform: scale(1.3);
-          }
-          70% {
-            transform: scale(1);
-          }
+            background-color: transparent;
+            border: none;
+            padding: 0;
         }
-
+        .button-image {
+            width: 100px;
+            height: 100px;
+            transition: all 0.3s ease-in-out;
+        }
+        .gif-button:hover .button-image,
+        .gif-button:focus .button-image,
+        .gif-button:active .button-image {
+            content: url('./img/YQDj.gif');
+        }
+        .melting-button {
+            position: relative;
+            padding: 15px 30px;
+            background-color: #faebeb;
+            color: white;
+            border: none;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .melting-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+        .acid-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #00ff00;
+            clip-path: circle(0% at 50% 50%);
+            transition: clip-path 0.5s ease;
+            z-index: 0;
+        }
+        .melting-button:hover .acid-layer {
+            clip-path: circle(100% at 50% 50%);
+        }
+        .particle-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .particle {
+            position: absolute;
+            background-color: rgba(0, 255, 0, 0.8);
+            border-radius: 50%;
+            animation: particleAnim ease infinite;
+        }
+        @keyframes particleAnim {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.3); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.3); }
+            70% { transform: scale(1); }
+        }
         #btn3:hover {
-          animation: heartbeat 1.5s infinite;
+            animation: heartbeat 1.5s infinite;
         }
-
-   
-
-
-
-
-
+        .sinal {
+            max-width: 100%;
+            height: auto;
+            width: 300px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="button-container">
-            <button id="btn1" class="main-button gif-button"> <img src="./img/microscope.png" alt="Botón" class="button-image">Señales de laboratorio</button>
+            <button id="btn1" class="main-button gif-button">
+                <img src="./img/microscope.png" alt="Botón" class="button-image">Señales de laboratorio
+            </button>
             <button id="btn2" class="main-button melting-button">
                 Símbolos de Embase
                 <img src="./img/flask.png" alt="Botón" class="button-image">
-                <div class="particle-container"></div> <!-- Asegúrate de tener este div aquí -->
-            </button>            
-            <button id="btn3" class="main-button"> <img src="./img/rombo.png" alt="Botón" class="button-image"> Rombo de seguridad</button>
+                <div class="particle-container"></div>
+            </button>
+            <button id="btn3" class="main-button">
+                <img src="./img/rombo.png" alt="Botón" class="button-image">Rombo de seguridad
+            </button>
         </div>
         <div id="content1" class="content">
             <h2>Señales de laboratorio</h2>
             <div class="card">
                 <div class="image-box">
                     <img class="sinal" src="./img/AD-200.png">
-                </div>
-                <div class="content">
                     <h2>Materias inflamables</h2>
-                    <p>Propósito: Advertir que en el área se manejan sustancias que pueden encenderse fácilmente en presencia de una fuente de ignición. Ejemplos incluyen alcoholes, acetona, gases inflamables como hidrógeno o metano.
-        
-                        Medidas de seguridad:
-                        Mantener las sustancias lejos de fuentes de calor o chispas.
-                        Almacenar en gabinetes especiales para materiales inflamables.
-                        Asegurarse de que el área esté bien ventilada.
-                        Usar ropa protectora y gafas de seguridad.
-                        Tener extintores adecuados a la mano (clase B o C, dependiendo de la sustancia).</p>
+                    <p>Propósito: Advertir que en el área se manejan sustancias que pueden encenderse fácilmente en presencia de una fuente de ignición.</p>
+                    <p>Medidas de seguridad:
+                        <ul>
+                            <li>Mantener las sustancias lejos de fuentes de calor.</li>
+                            <li>Almacenar en gabinetes especiales.</li>
+                            <li>Usar ropa protectora.</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="image-box">
+                        <img class="sinal" src="./img/AD-2070.png">
+                        <h2>Materias corrosivas</h2>
+                        <p>Propósito: Señalar que se manipulan sustancias que pueden causar daño severo a los tejidos humanos o corroer el equipo.</p>
+                        <p>Medidas de seguridad:
+                            <ul>
+                                <li>Usar equipo de protección personal.</li>
+                                <li>Almacenar en recipientes resistentes.</li>
+                                <li>Tener estaciones de lavado cercanas.</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="image-box">
+                            <img class="sinal" src="./img/AD-210.png">
+                            <h2>Radiaciones no ionizantes</h2>
+                            <p>Proposito: Advertir sobre fuentes de radiación no ionizante, como microondas, láseres, infrarrojos o radiofrecuencias. Aunque estas radiaciones no tienen la capacidad de ionizar átomos, pueden causar daño térmico o lesiones en los ojos o la piel si no se manejan adecuadamente.</p>
+                            <p>Medidas de seguridad:
+                                <ul>
+                                    <li>Usar gafas protectoras para láseres.</li>
+                                    <li>Colocar señales visibles cerca de las fuentes.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="image-box">
+                            <img class="sinal" src="./img/AD-2280.png">
+                            <h2>Riesgo biológico</h2>
+                            <p>Propósito: Señalar la presencia de material biológico que puede ser dañino, como virus, bacterias, hongos o productos biológicos que puedan causar infecciones o reacciones adversas.</p>
+                            <p>Medidas de seguridad:
+                                <ul>
+                                    <li>Uso de equipo de protección personal adecuado (guantes desechables, mascarillas, batas de laboratorio).</li>
+                                    <li>Trabajar dentro de cabinas de bioseguridad o áreas de contención adecuadas.</li>
+                                    <li>Desechar el material biológico en contenedores especializados para residuos peligrosos biológicos.</li>
+                                    <li>Desinfectar frecuentemente las superficies y el equipo después del uso.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="image-box">
+                            <img class="sinal" src="./img/AD-211.png">
+                            <h2>Radiaciones láser:</h2>
+                            <p>Propósito: Advertir sobre la presencia de láseres en el laboratorio, que pueden causar daño ocular permanente o quemaduras en la piel si se utilizan sin protección adecuada.</p>
+                            <p>Medidas de seguridad:
+                                <ul>
+                                    <li>Usar gafas de seguridad diseñadas específicamente para la longitud de onda del láser.</li>
+                                    <li>Limitar el acceso a áreas donde se utilicen láseres a personal entrenado.</li>
+                                    <li>Colocar barreras o cortinas de seguridad que bloqueen la luz láser no deseada.</li>
+                                    <li>Instruir al personal sobre el uso seguro de los láseres y los riesgos asociados.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="image-box">
+                            <img class="sinal" src="./img/AD-211.png">
+                            <h2>Campo magnético:</h2>
+                            <p>Propósito: Indicar la presencia de campos magnéticos intensos, como los generados por imanes potentes o equipos de resonancia magnética. Estos campos pueden atraer objetos metálicos y causar lesiones, así como interferir con dispositivos electrónicos o marcapasos.</p>
+                            <p>Medidas de seguridad:
+                                <ul>
+                                    <li>Mantener objetos metálicos alejados de las áreas de campo magnético fuerte.</li>
+                                    <li>Prohibir la entrada a personas con marcapasos o implantes metálicos.</li>
+                                    <li>Usar señales claras que adviertan sobre la presencia de campos magnéticos en el área.</li>
+                                    <li>Asegurarse de que los equipos electrónicos estén adecuadamente protegidos.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="back-button">Volver</button>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="content2" class="content">
+            <h2>Símbolos de Embase</h2>
+
+
+            <!-- Símbolo de peligro -->
+            <div class="card">
+                <div class="image-box">
+                    <img class="sinal" src="./img/danger!.png">
+                    <h2>Símbolo de peligro</h2>
+                    <p>Descripción: Representa un icono específico que indica el tipo de peligro, como inflamabilidad, toxicidad, corrosividad, entre otros.</p>
+                    <p>Propósito: Proporcionar una advertencia clara sobre los peligros que presenta el material.</p>
+                    <p>Medidas de seguridad:
+                        <ul>
+                            <li>Leer y comprender las etiquetas de los envases.</li>
+                            <li>Usar el equipo de protección adecuado al manipular sustancias identificadas con estos símbolos.</li>
+                        </ul>
+                    </p>
                 </div>
             </div>
             
-           
-            <button class="back-button">Volver</button>
-        </div>
-        <div id="content2" class="content">
-            <h2>Símbolos de Embase</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis iaculis eros. Pellentesque ex augue, auctor quis tincidunt eu, consectetur ac augue. Vestibulum blandit risus quis mauris posuere venenatis. Donec gravida odio eu viverra fringilla. Phasellus lacus quam, vestibulum vitae erat at, rutrum porta ipsum. Mauris porttitor nisl id quam venenatis rutrum. Pellentesque bibendum quis diam non accumsan. Phasellus iaculis molestie orci vel suscipit. Duis non massa est. Vivamus et efficitur odio. Phasellus nisl urna, egestas quis felis eget, tristique pretium magna. Donec faucibus lectus vel scelerisque aliquam.</p>
-            <p>Aliquam fermentum urna ac odio scelerisque, a ullamcorper sem blandit. Sed auctor mattis ex, vitae euismod ex commodo sit amet. Quisque ac ullamcorper nisl. Duis mauris nisi, placerat sed condimentum in, luctus id est. Praesent sed enim turpis. Proin ornare elementum lectus, ullamcorper volutpat nisi blandit et. Sed scelerisque consequat porttitor. Vestibulum vitae sem tortor. Vestibulum quis turpis elementum, sagittis tellus iaculis, fringilla est. In luctus elementum felis, eget malesuada ligula ultrices sit amet. In vel dui efficitur, suscipit leo sit amet, ornare velit. Duis vitae libero justo.</p>
+            <!-- Materias tóxicas -->
+            <div class="card">
+                <div class="image-box">
+                    <img class="sinal" src="./img/AD-2050.png">
+                    <h2>Materias tóxicas</h2>
+                    <p>Descripción: Un símbolo que muestra un cráneo y tibias cruzadas.</p>
+                    <p>Propósito: Indica que la sustancia es tóxica y puede causar daños graves o muerte si se inhala, ingiere o entra en contacto con la piel.</p>
+                    <p>Medidas de seguridad:
+                        <ul>
+                            <li>Usar guantes, gafas de seguridad y mascarillas.</li>
+                            <li>Manipular en un área bien ventilada o bajo una campana extractora.</li>
+                            <li>Almacenar en contenedores cerrados y etiquetados.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Materias corrosivas -->
+            <div class="card">
+                <div class="image-box">
+                    <img class="sinal" src="./img/AD-2070.png">
+                    <h2>Materias corrosivas</h2>
+                    <p>Descripción: Representa una sustancia derritiendo o corroyendo un metal y la piel.</p>
+                    <p>Propósito: Indica que la sustancia puede causar quemaduras severas en la piel y daño a materiales.</p>
+                    <p>Medidas de seguridad:
+                        <ul>
+                            <li>Usar equipo de protección personal, como guantes y gafas.</li>
+                            <li>Tener estaciones de lavado ocular y duchas de emergencia disponibles.</li>
+                            <li>Almacenar en recipientes resistentes a la corrosión y etiquetados adecuadamente.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Materias inflamables -->
+            <div class="card">
+                <div class="image-box">
+                    <img class="sinal" src="./img/AD-200.png">
+                    <h2>Materias inflamables</h2>
+                    <p>Descripción: Un símbolo de llama.</p>
+                    <p>Propósito: Indica que el material puede inflamarse fácilmente y provocar incendios.</p>
+                    <p>Medidas de seguridad:
+                        <ul>
+                            <li>Mantener alejado de fuentes de calor y chispa.</li>
+                            <li>Almacenar en lugares frescos y ventilados.</li>
+                            <li>Tener extintores adecuados a la mano y realizar simulacros de evacuación.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Materias explosivas -->
+            <div class="card">
+                <div class="image-box">
+                    <img class="sinal" src="./img/images.png">
+                    <h2>Materias explosivas</h2>
+                    <p>Descripción: Un símbolo que representa una explosión o fuego.</p>
+                    <p>Propósito: Indica que la sustancia puede explotar bajo ciertas condiciones, como impacto, fricción o calor.</p>
+                    <p>Medidas de seguridad:
+                        <ul>
+                            <li>Manipular en áreas designadas y seguir los procedimientos de seguridad específicos.</li>
+                            <li>Mantener alejado de fuentes de impacto o fuego.</li>
+                            <li>Almacenar en contenedores especiales que minimicen el riesgo de detonación.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Materias radioactivas -->
+            <div class="card">
+                <div class="image-box">
+                    <img class="sinal" src="./img/AD-2090.png">
+                    <h2>Materias radioactivas</h2>
+                    <p>Descripción: Un símbolo con tres círculos que representan la radiación.</p>
+                    <p>Propósito: Indica que la sustancia emite radiación y puede ser peligrosa para la salud.</p>
+                    <p>Medidas de seguridad:
+                        <ul>
+                            <li>Usar dispositivos de detección de radiación.</li>
+                            <li>Manipular con guantes y utilizar barreras adecuadas.</li>
+                            <li>Almacenar en áreas designadas y asegurarse de que el personal esté capacitado.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Materiales que liberan gases -->
+            <div class="card">
+                <div class="image-box">
+                    <img class="sinal" src="./img/AD-2018.png">
+                    <h2>Materiales que liberan gases</h2>
+                    <p>Descripción: Un símbolo que muestra un cilindro con un gas.</p>
+                    <p>Propósito: Indica que el material puede liberar gases a presión que pueden ser peligrosos.</p>
+                    <p>Medidas de seguridad:
+                        <ul>
+                            <li>Manipular con cuidado para evitar rupturas de envases.</li>
+                            <li>Almacenar en posición vertical en áreas bien ventiladas.</li>
+                            <li>Tener en cuenta las propiedades de los gases liberados y sus riesgos.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Biopeligros -->
+            <div class="card">
+                <div class="image-box">
+                    <img class="sinal" src="./img/bio.png">
+                    <h2>Biopeligros</h2>
+                    <p>Descripción: Un símbolo que representa un círculo con tres segmentos.</p>
+                    <p>Propósito: Indica que el material puede contener agentes biológicos peligrosos, como virus o bacterias.</p>
+                    <p>Medidas de seguridad:
+                        <ul>
+                            <li>Usar equipo de protección personal adecuado, como guantes y mascarillas.</li>
+                            <li>Manipular en condiciones controladas y desinfectar superficies.</li>
+                            <li>Seguir las normativas de bioseguridad pertinentes.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
             <button class="back-button">Volver</button>
         </div>
         <div id="content3" class="content">
-            <h2>Rombo de seguridad</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis iaculis eros. Pellentesque ex augue, auctor quis tincidunt eu, consectetur ac augue. Vestibulum blandit risus quis mauris posuere venenatis. Donec gravida odio eu viverra fringilla. Phasellus lacus quam, vestibulum vitae erat at, rutrum porta ipsum. Mauris porttitor nisl id quam venenatis rutrum. Pellentesque bibendum quis diam non accumsan. Phasellus iaculis molestie orci vel suscipit. Duis non massa est. Vivamus et efficitur odio. Phasellus nisl urna, egestas quis felis eget, tristique pretium magna. Donec faucibus lectus vel scelerisque aliquam.</p>
-            <p>Aliquam fermentum urna ac odio scelerisque, a ullamcorper sem blandit. Sed auctor mattis ex, vitae euismod ex commodo sit amet. Quisque ac ullamcorper nisl. Duis mauris nisi, placerat sed condimentum in, luctus id est. Praesent sed enim turpis. Proin ornare elementum lectus, ullamcorper volutpat nisi blandit et. Sed scelerisque consequat porttitor. Vestibulum vitae sem tortor. Vestibulum quis turpis elementum, sagittis tellus iaculis, fringilla est. In luctus elementum felis, eget malesuada ligula ultrices sit amet. In vel dui efficitur, suscipit leo sit amet, ornare velit. Duis vitae libero justo.</p>
+         <!-- Rombo de seguridad -->
+<div class="card">
+    <div class="image-box">
+        <img class="sinal" src="./img/rombo.png"> <!-- Cambia el nombre del archivo según corresponda -->
+        <h2>Rombo de Seguridad</h2>
+        <p>Descripción: Un rombo dividido en cuatro secciones que indican diferentes tipos de peligros asociados con productos químicos.</p>
+
+        <h3>Secciones del Rombo de Seguridad</h3>
+        
+        <h4>Parte Superior (Peligro para la Salud - Color Azul):</h4>
+        <ul>
+            <li><strong>Número de 0 a 4:</strong> Indica el nivel de peligrosidad para la salud del material.</li>
+            <li><strong>0:</strong> Sin riesgo.</li>
+            <li><strong>1:</strong> Riesgo leve.</li>
+            <li><strong>2:</strong> Riesgo moderado.</li>
+            <li><strong>3:</strong> Riesgo serio.</li>
+            <li><strong>4:</strong> Riesgo extremo.</li>
+        </ul>
+        <p><strong>Propósito:</strong> Proporcionar información sobre el daño que puede causar a la salud al ser inhalado, ingerido o en contacto con la piel.</p>
+
+        <h4>Parte Izquierda (Peligro de Inflamabilidad - Color Rojo):</h4>
+        <ul>
+            <li><strong>Número de 0 a 4:</strong> Indica el grado de inflamabilidad del material.</li>
+            <li><strong>0:</strong> No inflamable.</li>
+            <li><strong>1:</strong> Inflamable a altas temperaturas.</li>
+            <li><strong>2:</strong> Inflamable bajo condiciones normales.</li>
+            <li><strong>3:</strong> Inflamable y puede arder a temperaturas normales.</li>
+            <li><strong>4:</strong> Extremadamente inflamable.</li>
+        </ul>
+        <p><strong>Propósito:</strong> Indicar la facilidad con la que el material puede inflamarse y arder.</p>
+
+        <h4>Parte Derecha (Peligro de Reactividad - Color Amarillo):</h4>
+        <ul>
+            <li><strong>Número de 0 a 4:</strong> Indica la estabilidad química y la reactividad del material.</li>
+            <li><strong>0:</strong> Estable.</li>
+            <li><strong>1:</strong> Puede reaccionar.</li>
+            <li><strong>2:</strong> Puede reaccionar violentamente con agua.</li>
+            <li><strong>3:</strong> Puede ser explosivo en ciertas condiciones.</li>
+            <li><strong>4:</strong> Extremadamente inestable y puede detonar.</li>
+        </ul>
+        <p><strong>Propósito:</strong> Advertir sobre la capacidad del material para reaccionar químicamente con otras sustancias.</p>
+
+        <h4>Parte Inferior (Peligro Especial - Color Blanco):</h4>
+        <ul>
+            <li><strong>Símbolos o letras:</strong> Indican riesgos especiales, como "OX" para oxidantes o "ACID" para ácidos.</li>
+        </ul>
+        <p><strong>Propósito:</strong> Proporcionar información adicional sobre peligros específicos que no se cubren en las otras secciones.</p>
+
+        <h3>Medidas de Seguridad</h3>
+        <ul>
+            <li><strong>Identificación Rápida:</strong> Antes de manipular cualquier sustancia, siempre verifica el rombo de seguridad para comprender los riesgos asociados.</li>
+            <li><strong>Equipo de Protección Personal (EPP):</strong> Usa el equipo adecuado según los peligros indicados. Esto puede incluir guantes, gafas de seguridad, respiradores, etc.</li>
+            <li><strong>Almacenamiento:</strong> Mantén los materiales clasificados por su peligrosidad en áreas designadas y adecuadamente etiquetadas.</li>
+            <li><strong>Capacitación:</strong> Asegúrate de que el personal esté capacitado en el manejo de materiales peligrosos y sepa interpretar correctamente el rombo de seguridad.</li>
+        </ul>
+    </div>
+</div>
+
             <button class="back-button">Volver</button>
         </div>
     </div>
@@ -255,21 +492,28 @@
             const buttons = document.querySelectorAll('.main-button');
             const contents = document.querySelectorAll('.content');
             const backButtons = document.querySelectorAll('.back-button');
+            const particleContainer = document.querySelector('.particle-container');
 
             buttons.forEach((button, index) => {
                 button.addEventListener('click', () => {
                     buttons.forEach(btn => btn.style.display = 'none');
                     contents[index].style.display = 'block';
-                    
-                    if (index === 0) {
-                        button.style.animation = 'nuclear-explosion 1s';
-                        contents[index].style.animation = 'slide-up 1s';
-                    } else if (index === 1) {
-                        button.style.animation = 'chemical-corrosion 1s';
-                        contents[index].style.animation = 'slide-right 1s';
-                    } else {
-                        button.style.animation = 'thanos-snap 1s';
-                        contents[index].style.animation = 'slide-left 1s';
+
+                    // Animaciones dependiendo del botón
+                    switch (index) {
+                        case 0:
+                            button.style.animation = 'nuclear-explosion 1s';
+                            contents[index].style.animation = 'slide-up 1s';
+                            break;
+                        case 1:
+                            button.style.animation = 'chemical-corrosion 1s';
+                            contents[index].style.animation = 'slide-right 1s';
+                            generateParticles(particleContainer);
+                            break;
+                        case 2:
+                            button.style.animation = 'thanos-snap 1s';
+                            contents[index].style.animation = 'slide-left 1s';
+                            break;
                     }
                 });
             });
@@ -283,78 +527,25 @@
                     });
                 });
             });
-        });
-    </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const button = document.getElementById('btn2');
-        const particleContainer = button.querySelector('.particle-container');
-
-        button.addEventListener('mouseenter', () => {
-            for (let i = 0; i < 20; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                const size = Math.random() * 10 + 5;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.animationDuration = `${Math.random() * 0.5 + 0.5}s`;
-                particle.style.animationDelay = `${Math.random() * 0.5}s`;
-                particleContainer.appendChild(particle);
-
-                // Eliminar la partícula después de la animación
-                particle.addEventListener('animationend', () => {
-                    particle.remove();
-                });
-            }
-        });
-    });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const buttons = document.querySelectorAll('.main-button');
-            const contents = document.querySelectorAll('.content');
-            const backButtons = document.querySelectorAll('.back-button');
-
-            buttons.forEach((button, index) => {
-                button.addEventListener('click', () => {
-                    buttons.forEach(btn => btn.style.display = 'none');
-                    contents[index].style.display = 'block';
-                    
-                    if (index === 0) {
-                        button.style.animation = 'nuclear-explosion 1s';
-                        contents[index].style.animation = 'slide-up 1s';
-                    } else if (index === 1) {
-                        button.style.animation = 'chemical-corrosion 1s';
-                        contents[index].style.animation = 'slide-right 1s';
-                    } else {
-                        button.style.animation = 'thanos-snap 1s';
-                        contents[index].style.animation = 'slide-left 1s';
-                    }
-                });
-
-                // Añadir manejo de hover para el botón de rombo de seguridad
-                if (index === 2) {
-                    button.addEventListener('mouseenter', () => {
-                        button.style.animation = 'heartbeat 1.5s infinite';
-                    });
-                    button.addEventListener('mouseleave', () => {
-                        button.style.animation = 'none';
-                    });
+            function generateParticles(container) {
+                for (let i = 0; i < 50; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    particle.style.width = `${Math.random() * 5}px`;
+                    particle.style.height = particle.style.width;
+                    particle.style.top = `${Math.random() * 100}%`;
+                    particle.style.left = `${Math.random() * 100}%`;
+                    particle.style.animationDuration = `${Math.random() * 2 + 1}s`;
+                    container.appendChild(particle);
                 }
-            });
 
-            backButtons.forEach((button, index) => {
-                button.addEventListener('click', () => {
-                    contents[index].style.display = 'none';
-                    buttons.forEach(btn => {
-                        btn.style.display = 'inline-block';
-                        btn.style.animation = 'none';
-                    });
-                });
-            });
+                setTimeout(() => {
+                    while (container.firstChild) {
+                        container.removeChild(container.firstChild);
+                    }
+                }, 3000); // Limpiar las partículas después de 3 segundos
+            }
         });
     </script>
 </body>
