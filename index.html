@@ -195,11 +195,92 @@
           animation: heartbeat 1.5s infinite;
         }
 
-        .senal {
+   
+
+.card {
+    width: 400px;
+    aspect-ratio: 1 / 0.7;
+    border-radius: 12px; /* Un poco más redondeado */
+    position: relative;
+    overflow: hidden; /* Para evitar que el contenido salga del borde redondeado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease-in-out; /* Transición para el hover */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Efecto de elevación */
+}
+
+.card .image-box {
     max-width: 100%; /* La imagen no será más ancha que su contenedor */
     height: auto;   /* Mantiene la proporción de la imagen */
-    width: 300px;   /* Ajusta este valor según el tamaño deseado */
+    width: 250px;   /* Ajusta este valor según el tamaño deseado */
 }
+
+.card .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.5s ease-in-out;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid rgba(255, 255, 255, 0.8); /* Color más suave */
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out, inset 0.4s ease-in-out;
+}
+
+.card .content {
+    position: absolute;
+    bottom: 10px; /* Ajuste de posición del contenido */
+    left: 20px;
+    z-index: 1;
+    color: white;
+    transition: color 0.5s ease-in-out;
+}
+
+.card .content h2 {
+    font-size: 24px;
+    transform: scale(0.9); /* Inicia más pequeño */
+    opacity: 0; /* Inicialmente invisible */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.card .content p {
+    margin-top: 10px;
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(20px); /* Comienza desplazado hacia abajo */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.card:hover img {
+    filter: grayscale(1) brightness(0.6); /* Ajuste de brillo */
+}
+
+.card:hover::after {
+    opacity: 1;
+    inset: 10px; /* Ajuste de inset */
+}
+
+.card:hover .content h2 {
+    transform: scale(1);
+    opacity: 1; /* Aparece en el hover */
+    color: #ffcc00; /* Color más vibrante */
+}
+
+.card:hover .content p {
+    opacity: 1; /* Aparece en el hover */
+    transform: translateY(0); /* Vuelve a su posición original */
+    font-weight: bold;
+    color: white; /* Color del interior del texto */
+
+}
+
+
 
     </style>
 </head>
@@ -216,9 +297,24 @@
         </div>
         <div id="content1" class="content">
             <h2>Señales de laboratorio</h2>
-            <img class="senal" src="./img/AD-200.png" alt="" srcset="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis iaculis eros. Pellentesque ex augue, auctor quis tincidunt eu, consectetur ac augue. Vestibulum blandit risus quis mauris posuere venenatis. Donec gravida odio eu viverra fringilla. Phasellus lacus quam, vestibulum vitae erat at, rutrum porta ipsum. Mauris porttitor nisl id quam venenatis rutrum. Pellentesque bibendum quis diam non accumsan. Phasellus iaculis molestie orci vel suscipit. Duis non massa est. Vivamus et efficitur odio. Phasellus nisl urna, egestas quis felis eget, tristique pretium magna. Donec faucibus lectus vel scelerisque aliquam.</p>
-            <p>Aliquam fermentum urna ac odio scelerisque, a ullamcorper sem blandit. Sed auctor mattis ex, vitae euismod ex commodo sit amet. Quisque ac ullamcorper nisl. Duis mauris nisi, placerat sed condimentum in, luctus id est. Praesent sed enim turpis. Proin ornare elementum lectus, ullamcorper volutpat nisi blandit et. Sed scelerisque consequat porttitor. Vestibulum vitae sem tortor. Vestibulum quis turpis elementum, sagittis tellus iaculis, fringilla est. In luctus elementum felis, eget malesuada ligula ultrices sit amet. In vel dui efficitur, suscipit leo sit amet, ornare velit. Duis vitae libero justo.</p>
+            <div class="card">
+                <div class="image-box">
+                    <img class="sinal" src="/img/AD-200.png">
+                </div>
+                <div class="content">
+                    <h2>Materias inflamables</h2>
+                    <p>Propósito: Advertir que en el área se manejan sustancias que pueden encenderse fácilmente en presencia de una fuente de ignición. Ejemplos incluyen alcoholes, acetona, gases inflamables como hidrógeno o metano.
+        
+                        Medidas de seguridad:
+                        Mantener las sustancias lejos de fuentes de calor o chispas.
+                        Almacenar en gabinetes especiales para materiales inflamables.
+                        Asegurarse de que el área esté bien ventilada.
+                        Usar ropa protectora y gafas de seguridad.
+                        Tener extintores adecuados a la mano (clase B o C, dependiendo de la sustancia).</p>
+                </div>
+            </div>
+            
+           
             <button class="back-button">Volver</button>
         </div>
         <div id="content2" class="content">
